@@ -27,8 +27,7 @@ namespace YU.ECS.T3
             CubeArchetype = entityManager.CreateArchetype(
                 typeof(Position),
                 typeof(RenderMesh),
-                typeof(CubeComponent),
-                typeof(ForceComponent)
+                typeof(CubeComponent)
             );
         }
         protected override void OnStartRunning()
@@ -63,24 +62,13 @@ namespace YU.ECS.T3
                     //cube属性
                     CubeComponent c = new CubeComponent
                     {
-                        position = initialPosition,
-                        radius = 1,
                         mass = 1,
                         maxLength = 20,
                         velocity = Vector3.zero,
-                        acceration = Vector3.zero,
-                        isInEnemy = 0
+                        acceration = Vector3.zero
                     };
 
                     entityManager.SetComponentData(cube,c);
-
-                    //边界
-                    float4 v = new float4(-960f, -540f, 960f, 540f);
-
-                    //力属性初始化
-                    ForceComponent f = new ForceComponent { Mass = 70f, bound = v, frictionCoe = 0.1f };
-
-                    entityManager.SetComponentData(cube, f);
 
                     entityManager.SetSharedComponentData(cube, cubeRenderer);
 
