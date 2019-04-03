@@ -23,6 +23,8 @@ public class SystemControl : MonoBehaviour
         World.Active.GetExistingManager<YU.ECS.T1.GenerateCubeSystem>().Enabled = false;
         World.Active.GetExistingManager<YU.ECS.T2.GenerateCubeSystem>().Enabled = false;
         World.Active.GetExistingManager<YU.ECS.T2.MoveCubeSystem>().Enabled = false;
+        World.Active.GetExistingManager<YU.ECS.T3.GenerateCubeSystem>().Enabled = false;
+        World.Active.GetExistingManager<YU.ECS.T3.MoveCubeSystem>().Enabled = false;
     }
 
 }
